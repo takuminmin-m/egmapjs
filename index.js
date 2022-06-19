@@ -8,6 +8,12 @@ window.onload = () => {
   panButtonElem.addEventListener("click", event => {
     pan(map);
   })
+
+  const markButtonElem = document.querySelector('button[name="mark"]');
+  markButtonElem.addEventListener("click", event => {
+    const [lat, lng] = getPlace();
+    map.addIcon(lat, lng, "a", "icon/megane.png", 16, 16);
+  })
 }
 
 const getPlace = () => {
